@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/RohitFiles/Projects/Internshala/InternsList/app/src/main/res/drawable/internship_bg.xml" value="0.24427083333333333" />
+        <entry key="..\:/RohitFiles/Projects/Internshala/InternsList/app/src/main/res/layout/activity_main.xml" value="0.17002767892447607" />
+        <entry key="..\:/RohitFiles/Projects/Internshala/InternsList/app/src/main/res/layout/internship_card_adapter.xml" value="0.2945205479452055" />
+        <entry key="..\:/RohitFiles/Projects/Internshala/InternsList/app/src/main/res/layout/loading_layout.xml" value="0.13903985507246377" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
