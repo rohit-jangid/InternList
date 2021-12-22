@@ -87,6 +87,9 @@ public class InternshipsAdapter extends RecyclerView.Adapter<InternshipsAdapter.
         notifyDataSetChanged();
     }
 
+    /***
+     * removes null
+     */
     public void removeNull() {
         if (this.mList.size() > 0 && this.mList.get(this.mList.size() - 1) == null) {
             this.mList.remove(this.mList.size() - 1);
@@ -94,6 +97,10 @@ public class InternshipsAdapter extends RecyclerView.Adapter<InternshipsAdapter.
         }
     }
 
+    /**
+     * creating a callback kind of thing to detect the last object is reached or not
+     * @param onLastItemListener
+     */
     public void setOnLastItemListener(OnLastItemListener onLastItemListener) {
         this.onLastItemListener = onLastItemListener;
     }
