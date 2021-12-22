@@ -148,7 +148,7 @@
                 android:padding="4dp"
                 android:textColor="@color/black"
                 android:layout_alignParentEnd="true"
-                app:drawableStartCompat="@mipmap/home"
+                app:drawableStartCompat="@mipmap/sandclock"
                 android:drawablePadding="4dp"/>
 
         </RelativeLayout>
