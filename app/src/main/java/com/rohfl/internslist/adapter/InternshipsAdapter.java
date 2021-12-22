@@ -44,6 +44,7 @@ public class InternshipsAdapter extends RecyclerView.Adapter<InternshipsAdapter.
         if(position == mList.size() - 1) {
             onLastItemListener.onLastItem(position);
         } else {
+            // if the holder is an object/instance of ViewHolder then do the following else do nothing
             if(holder instanceof ViewHolder) {
                 Internship internship = mList.get(position);
                 ((ViewHolder) holder).title_tv.setText(internship.getRoleName());
@@ -89,7 +90,7 @@ public class InternshipsAdapter extends RecyclerView.Adapter<InternshipsAdapter.
     public void removeNull() {
         if (this.mList.size() > 0 && this.mList.get(this.mList.size() - 1) == null) {
             this.mList.remove(this.mList.size() - 1);
-            notifyItemRemoved(this.mList.size());
+            notifyItemRemoved(this.mList.size()-1);
         }
     }
 
