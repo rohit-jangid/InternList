@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // the recycler view for the internships
+        // the recycler view for the internships objects
         internshipRv = findViewById(R.id.internship_rv);
         // the layout manager for the recycler view
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
