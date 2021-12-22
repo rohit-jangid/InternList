@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
         // the recycler view for the internships
         internshipRv = findViewById(R.id.internship_rv);
-        // the layout manager fot the recycler view
+        // the layout manager for the recycler view
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         list = new ArrayList<>();
         internshipsAdapter = new InternshipsAdapter(this, list);
