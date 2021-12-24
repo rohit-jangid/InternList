@@ -97,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
                         String expiresOn = internshipDetail.getString("expiring_in");
                         boolean isPartTimeAllowed = internshipDetail.getBoolean("part_time");
                         boolean isWorkFromHome = internshipDetail.getBoolean("work_from_home");
+                        String company_logo = internshipDetail.getString("company_logo");
 
                         tempList.add(new Internship(profileName, companyName, stipendProvided, internshipDuration,
                                 typeOfJob, expiresOn, isPartTimeAllowed, isWorkFromHome));

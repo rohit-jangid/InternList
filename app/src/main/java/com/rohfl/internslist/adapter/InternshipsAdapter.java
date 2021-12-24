@@ -4,11 +4,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.rohfl.internslist.R;
 import com.rohfl.internslist.model.Internship;
 
@@ -64,6 +66,11 @@ public class InternshipsAdapter extends RecyclerView.Adapter<InternshipsAdapter.
                 ((ViewHolder) holder).is_internship_tv.setText(internship.getTypeOfJob());
 
                 ((ViewHolder) holder).apply_by_date_tv.setText(internship.getExpireDate());
+
+                if (internship.getCompanyLogoUrl() != null) {
+                    Glide.with(mContext).load(internship.getCompanyLogoUrl()).into(((ViewHolder) holder).compony_logo_iv);
+                }
+
             }
         }
     }
@@ -115,6 +122,7 @@ public class InternshipsAdapter extends RecyclerView.Adapter<InternshipsAdapter.
     public class ViewHolder extends MainViewHolder {
         TextView title_tv, company_name_tv, is_work_from_home_tv, stipend_tv, duration_tv, part_time_tv,
                 is_internship_tv, apply_by_date_tv;
+        ImageView compony_logo_iv;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -126,6 +134,7 @@ public class InternshipsAdapter extends RecyclerView.Adapter<InternshipsAdapter.
             part_time_tv = itemView.findViewById(R.id.part_time_tv);
             is_internship_tv = itemView.findViewById(R.id.is_internship_tv);
             apply_by_date_tv = itemView.findViewById(R.id.apply_by_date_tv);
+            compony_logo_iv = itemView.findViewById(R.id.company_logo_iv);
         }
     }
 
