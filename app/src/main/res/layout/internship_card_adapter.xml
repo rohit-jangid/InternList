@@ -26,7 +26,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_weight="6"
+                android:layout_weight="7"
                 android:orientation="vertical">
 
                 <TextView
@@ -52,14 +52,13 @@
             <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="4">
+                android:layout_weight="3">
 
                 <ImageView
                     android:id="@+id/company_logo_iv"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
+                    android:layout_height="100dp"
+                    android:layout_centerHorizontal="true"
                     android:src="@mipmap/ic_launcher" />
 
             </RelativeLayout>

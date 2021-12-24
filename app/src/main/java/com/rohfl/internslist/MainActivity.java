@@ -34,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
     List<Internship> list;
     boolean reachedLastPage = false;
 
-    // this is a sample comment
+    // logo base url
+    private final String LOGO_URL = "https://app.internshala.com/uploads/logo/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 if(!reachedLastPage)
                     getInternships();
                 else {
-
+                    internshipsAdapter.removeNull();
                 }
             }
         });
@@ -79,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                     // i have used optJSONArray which gives a JSONArray with int values
                     JSONArray items = response.optJSONArray("internship_ids") ;
                     // commented the below line because i was getting some error the isLastPage not found like that
-//                    reachedLastPage = response.getBoolean("isLastPage");
+                    reachedLastPage = response.getJSONObject("results_metadata").getBoolean("isLastPage");
                     List<Internship> tempList = new ArrayList<>();
 
                     // iterating the items and getting the data from it, and at the end making the object,
@@ -100,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
                         String company_logo = internshipDetail.getString("company_logo");
 
                         tempList.add(new Internship(profileName, companyName, stipendProvided, internshipDuration,
-                                typeOfJob, expiresOn, isPartTimeAllowed, isWorkFromHome));
+                                typeOfJob, expiresOn, isPartTimeAllowed, isWorkFromHome, LOGO_URL + company_logo));
                     }
                     // if we haven't reached the last page, i am appending a null to show a progressbar
                     if(!reachedLastPage) {
