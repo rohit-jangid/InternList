@@ -2,8 +2,8 @@ package com.rohfl.internslist.model;
 
 public class Internship {
     private String roleName, companyName, stipendProvided, internshipDuration, typeOfJob,
-    expireDate, companyLogoUrl = null;
-    private boolean  isPartTimeAllowed, isWorkFromHome;
+            expireDate, companyLogoUrl = null;
+    private boolean isPartTimeAllowed, isWorkFromHome;
 
     public Internship(String roleName, String companyName, String stipendProvided, String internshipDuration, String typeOfJob, String expireDate, boolean isPartTimeAllowed, boolean isWorkFromHome) {
         this.roleName = roleName;

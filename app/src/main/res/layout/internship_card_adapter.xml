@@ -68,62 +68,61 @@
 
         <TextView
             android:id="@+id/is_work_from_home_tv"
-            android:layout_marginStart="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:drawableStartCompat="@mipmap/home"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:drawablePadding="4dp"
             android:text="work from home"
             android:textSize="12sp"
-            android:layout_marginTop="12dp"
-            android:drawablePadding="4dp"/>
+            app:drawableStartCompat="@mipmap/home" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
             android:layout_marginTop="8dp"
-            >
+            android:layout_marginEnd="16dp"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/stipend_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:drawableStartCompat="@mipmap/money"
+                android:drawablePadding="4dp"
                 android:text="work from home"
                 android:textSize="12sp"
-                android:drawablePadding="4dp"/>
+                app:drawableStartCompat="@mipmap/money" />
 
             <TextView
                 android:id="@+id/duration_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:drawableStartCompat="@mipmap/calendar"
+                android:layout_marginStart="8dp"
+                android:drawablePadding="4dp"
                 android:text="work from home"
                 android:textSize="12sp"
-                android:layout_marginStart="8dp"
-                android:drawablePadding="4dp"/>
+                app:drawableStartCompat="@mipmap/calendar" />
 
         </LinearLayout>
 
         <TextView
             android:id="@+id/part_time_tv"
-            android:layout_marginStart="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:drawableStartCompat="@mipmap/clock"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:drawablePadding="4dp"
             android:text="work from home"
             android:textSize="12sp"
-            android:layout_marginTop="8dp"
-            android:drawablePadding="4dp"/>
+            app:drawableStartCompat="@mipmap/clock" />
 
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="8dp">
 
@@ -132,24 +131,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/internship_bg"
-                android:text="Internship"
                 android:fontFamily="sans-serif-light"
-                android:textSize="12sp"
+                android:padding="8dp"
+                android:text="Internship"
                 android:textColor="@color/black"
-                android:padding="8dp"/>
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/apply_by_date_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Internship"
-                android:fontFamily="sans-serif-light"
-                android:textSize="12sp"
-                android:padding="4dp"
-                android:textColor="@color/black"
                 android:layout_alignParentEnd="true"
-                app:drawableStartCompat="@mipmap/sandclock"
-                android:drawablePadding="4dp"/>
+                android:drawablePadding="4dp"
+                android:fontFamily="sans-serif-light"
+                android:padding="4dp"
+                android:text="Internship"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:drawableStartCompat="@mipmap/sandclock" />
 
         </RelativeLayout>
 

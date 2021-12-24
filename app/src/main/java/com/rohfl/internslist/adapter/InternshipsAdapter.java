@@ -17,7 +17,7 @@ import com.rohfl.internslist.model.Internship;
 
 import java.util.List;
 
-public class InternshipsAdapter extends RecyclerView.Adapter<InternshipsAdapter.MainViewHolder>{
+public class InternshipsAdapter extends RecyclerView.Adapter<InternshipsAdapter.MainViewHolder> {
 
     Context mContext;
     List<Internship> mList;
@@ -33,7 +33,7 @@ public class InternshipsAdapter extends RecyclerView.Adapter<InternshipsAdapter.
     @Override
     public MainViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v;
-        if(viewType == 0) {
+        if (viewType == 0) {
             v = LayoutInflater.from(mContext).inflate(R.layout.internship_card_adapter, parent, false);
             return new ViewHolder(v);
         } else {
@@ -44,11 +44,11 @@ public class InternshipsAdapter extends RecyclerView.Adapter<InternshipsAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull InternshipsAdapter.MainViewHolder holder, int position) {
-        if(position == mList.size() - 1) {
+        if (position == mList.size() - 1) {
             onLastItemListener.onLastItem(position);
         } else {
             // if the holder is an object/instance of ViewHolder then do the following else do nothing
-            if(holder instanceof ViewHolder) {
+            if (holder instanceof ViewHolder) {
                 Internship internship = mList.get(position);
                 ((ViewHolder) holder).title_tv.setText(internship.getRoleName());
                 ((ViewHolder) holder).company_name_tv.setText(internship.getCompanyName());
@@ -101,12 +101,13 @@ public class InternshipsAdapter extends RecyclerView.Adapter<InternshipsAdapter.
     public void removeNull() {
         if (this.mList.size() > 0 && this.mList.get(this.mList.size() - 1) == null) {
             this.mList.remove(this.mList.size() - 1);
-            notifyItemRemoved(this.mList.size()-1);
+            notifyItemRemoved(this.mList.size() - 1);
         }
     }
 
     /**
      * creating a callback kind of thing to detect the last object is reached or not
+     *
      * @param onLastItemListener
      */
     public void setOnLastItemListener(OnLastItemListener onLastItemListener) {

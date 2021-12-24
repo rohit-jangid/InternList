@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onLastItem(int position) {
                 // if we haven't reached the last page then again hit the api
-                if(!reachedLastPage)
+                if (!reachedLastPage)
                     getInternships();
                 else {
                     internshipsAdapter.removeNull();
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         getInternships();
     }
 
-    private void getInternships(){
+    private void getInternships() {
         // now this is the url and at the end i'm attaching the current requested page
         String URL = "https://internshala.com/json/internships/page-" + currentPage;
         // incrementing current page because as we scroll we are requesting new data
@@ -75,21 +75,21 @@ public class MainActivity extends AppCompatActivity {
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, URL, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                try{
+                try {
                     // taking out the json array from the response, as the internship_ids are ints,
                     // i have used optJSONArray which gives a JSONArray with int values
-                    JSONArray items = response.optJSONArray("internship_ids") ;
+                    JSONArray items = response.optJSONArray("internship_ids");
                     // commented the below line because i was getting some error the isLastPage not found like that
                     reachedLastPage = response.getJSONObject("results_metadata").getBoolean("isLastPage");
                     List<Internship> tempList = new ArrayList<>();
 
                     // iterating the items and getting the data from it, and at the end making the object,
                     // and adding it to the list to pass to the adapter
-                    for(int i = 0 ; i < items.length() ; i++) {
-                        int internshipId = items.optInt(i) ;
+                    for (int i = 0; i < items.length(); i++) {
+                        int internshipId = items.optInt(i);
 
-                        JSONObject internshipListItem = response.getJSONObject("internships_meta") ;
-                        JSONObject internshipDetail = internshipListItem.getJSONObject(String.valueOf(internshipId)) ;
+                        JSONObject internshipListItem = response.getJSONObject("internships_meta");
+                        JSONObject internshipDetail = internshipListItem.getJSONObject(String.valueOf(internshipId));
                         String profileName = internshipDetail.getString("profile_name");
                         String companyName = internshipDetail.getString("company_name");
                         String stipendProvided = internshipDetail.getJSONObject("stipend").getString("salary");
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
                                 typeOfJob, expiresOn, isPartTimeAllowed, isWorkFromHome, LOGO_URL + company_logo));
                     }
                     // if we haven't reached the last page, i am appending a null to show a progressbar
-                    if(!reachedLastPage) {
+                    if (!reachedLastPage) {
                         internshipsAdapter.removeNull();
                         tempList.add(null);
                     } else {
@@ -114,8 +114,7 @@ public class MainActivity extends AppCompatActivity {
                     // updating the list
                     internshipsAdapter.updateList(tempList);
 
-                }
-                catch (JSONException e) {
+                } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
